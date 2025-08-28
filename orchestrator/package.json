@@ -1,0 +1,23 @@
+{
+  "name": "payload-wp-migration-orchestrator",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "payload-wp-migrate": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo 'No tests'"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "axios": "1.6.8",
+    "commander": "11.1.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6.2"
+  }
+}
