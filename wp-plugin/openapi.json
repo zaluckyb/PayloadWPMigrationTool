@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Payload Export Plugin",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {"url": "/wp-json/payload-export/v1"}
+  ],
+  "paths": {
+    "/site": {
+      "get": {
+        "summary": "Site metadata",
+        "responses": {"200": {"description": "Site information"}}
+      }
+    },
+    "/post-types": {
+      "get": {
+        "summary": "Registered post types",
+        "responses": {"200": {"description": "Post type list"}}
+      }
+    },
+    "/taxonomies": {
+      "get": {
+        "summary": "Registered taxonomies",
+        "responses": {"200": {"description": "Taxonomy list"}}
+      }
+    },
+    "/terms": {
+      "get": {
+        "summary": "Terms across taxonomies",
+        "parameters": [
+          {"name": "page", "in": "query", "schema": {"type": "integer"}},
+          {"name": "per_page", "in": "query", "schema": {"type": "integer"}}
+        ],
+        "responses": {"200": {"description": "Term list"}}
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "User accounts",
+        "responses": {"200": {"description": "User list"}}
+      }
+    },
+    "/content": {
+      "get": {
+        "summary": "Posts, pages and custom post types",
+        "parameters": [
+          {"name": "page", "in": "query", "schema": {"type": "integer"}},
+          {"name": "per_page", "in": "query", "schema": {"type": "integer"}},
+          {"name": "updated_after", "in": "query", "schema": {"type": "string", "format": "date-time"}}
+        ],
+        "responses": {"200": {"description": "Content feed"}}
+      }
+    },
+    "/media": {
+      "get": {
+        "summary": "Media attachments",
+        "responses": {"200": {"description": "Media list"}}
+      }
+    },
+    "/menus": {
+      "get": {
+        "summary": "Navigation menus",
+        "responses": {"200": {"description": "Menu list"}}
+      }
+    },
+    "/comments": {
+      "get": {
+        "summary": "Comments",
+        "responses": {"200": {"description": "Comment list"}}
+      }
+    },
+    "/options": {
+      "get": {
+        "summary": "Selected options",
+        "responses": {"200": {"description": "Options"}}
+      }
+    },
+    "/redirects": {
+      "get": {
+        "summary": "Redirect rules",
+        "responses": {"200": {"description": "Redirect list"}}
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Plugin health",
+        "responses": {"200": {"description": "Health status"}}
+      }
+    }
+  }
+}
